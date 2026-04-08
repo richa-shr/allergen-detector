@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "Allergen Detector",
+    "version": "1.0",
+    "description": "Detects allergens in product ingredients on Nykaa, Amazon and 1mg",
+  
+    "permissions": [
+      "activeTab",
+      "storage",
+      "scripting"
+    ],
+  
+    "host_permissions": [
+      "http://localhost:8000/*",
+      "https://www.nykaa.com/*",
+      "https://www.amazon.in/*",
+      "https://www.1mg.com/*"
+    ],
+  
+    "action": {
+      "default_popup": "popup.html"
+      
+    },
+  
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.nykaa.com/*",
+          "https://www.amazon.in/*",
+          "https://www.1mg.com/*"
+        ],
+        "js": ["content.js"]
+      }
+    ],
+  
+    "background": {
+      "service_worker": "background.js"
+    }
+  }

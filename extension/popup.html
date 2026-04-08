@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 340px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 16px;
+      background: #f9f9f9;
+    }
+    h2 { margin: 0 0 12px 0; font-size: 16px; color: #1a1a2e; }
+
+    #status {
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    #substatus {
+      font-size: 12px;
+      color: #444;
+      margin-bottom: 12px;
+      padding: 0 4px;
+    }
+
+    .safe { background: #d4edda; color: #155724; }
+    .unsafe { background: #f8d7da; color: #721c24; }
+    .loading { background: #fff3cd; color: #856404; }
+    .error { background: #f8d7da; color: #721c24; }
+
+    #see-alternatives-btn {
+      display: none;
+      width: 100%;
+      padding: 10px;
+      background: #0f3460;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    #see-alternatives-btn:hover { background: #1a1a2e; }
+
+    #alternatives { display: none; margin-top: 8px; }
+    .alt-item {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    .alt-item a { color: #0f3460; word-break: break-all; }
+
+    #allergen-section {
+      margin-top: 16px;
+      border-top: 1px solid #ddd;
+      padding-top: 12px;
+    }
+    input {
+      width: 100%;
+      padding: 6px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    #save-btn {
+      margin-top: 8px;
+      padding: 6px 12px;
+      background: #1a1a2e;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    #save-btn:hover { background: #0f3460; }
+    #allergen-list { margin-top: 8px; font-size: 12px; color: #555; }
+  </style>
+</head>
+<body>
+  <h2>🔍 Allergen Detector</h2>
+
+  <div id="status" class="loading">⏳ Checking ingredients...</div>
+  <div id="substatus">Please wait while we scan this product.</div>
+
+  <button id="see-alternatives-btn">✅ Safe Alternatives Found — Click to See</button>
+  <div id="alternatives"></div>
+
+  <div id="allergen-section">
+    <strong style="font-size:13px;">Your Allergens</strong>
+    <input type="text" id="allergen-input" placeholder="e.g. walnut, gluten, dairy" />
+    <button id="save-btn">Save</button>
+    <div id="allergen-list"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
