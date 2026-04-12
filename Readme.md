@@ -46,23 +46,4 @@ The LangGraph agent runs in two phases:
    - Enable Developer mode
    - Click Load unpacked → select `extension/` folder
 
-## Project Structure
-
-\```
-allergen-detector/
-├── main.py              # FastAPI endpoints
-├── agent/
-│   ├── graph.py         # LangGraph agent graphs
-│   ├── nodes.py         # Agent nodes
-│   ├── state.py         # State definition
-│   └── llm.py           # Allergen detection logic
-├── scrapers/
-│   └── nykaa.py         # Nykaa scraper
-└── extension/
-    ├── manifest.json
-    ├── background.js
-    ├── content.js
-    ├── popup.html
-    └── popup.js
-\```
 
